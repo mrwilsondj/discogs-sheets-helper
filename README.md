@@ -34,6 +34,21 @@ Open your Sheet and run:
 - `Extensions → Apps Script → Run → fetchDiscogsWithArt`
 - Grant permissions on first run when prompted.
 
+## Streaming Links
+
+The helper function `fetchStreamingLinks()` looks up Apple Music and Spotify URLs
+for each row using **Artist (col D)** and **Title (col C)**.  
+- Writes **Apple Music** link to column M  
+- Writes **Spotify** link to column N  
+
+### Setup
+- Apple Music: no setup (uses iTunes Search API)
+- Spotify: add `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` under  
+  **Extensions → Apps Script → Project Settings → Script properties**
+
+### Usage
+Run `fetchStreamingLinks()` from the Apps Script editor.  
+Hyperlinked Apple Music and Spotify results will appear in columns M & N.
 ## Notes
 
 - **Rate limits:** Script sleeps 500ms per row to be polite. Tweak as needed.
